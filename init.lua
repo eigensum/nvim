@@ -298,7 +298,7 @@ require("lazy").setup({
 			debug = false,
 		},
 	},
-	{
+	{ -- TODO: review shortcuts and move to the top
 		"folke/trouble.nvim",
 		opts = {},
 		cmd = "Trouble",
@@ -334,5 +334,10 @@ require("lazy").setup({
 				desc = "Quickfix List (Trouble)",
 			},
 		},
+	},
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {},
 	},
 })
