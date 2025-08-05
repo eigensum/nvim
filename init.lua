@@ -169,12 +169,6 @@ require("lazy").setup({
 	"nvim-treesitter/nvim-treesitter",
 	"nvim-telescope/telescope.nvim",
 	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }, config = setup_lualine },
-	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = setup_alpha,
-	},
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 	{
 		"catppuccin/nvim",
