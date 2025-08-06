@@ -271,7 +271,7 @@ require("lazy").setup({
 	{
 		"David-Kunz/gen.nvim",
 		opts = {
-			model = "gemma3:12b",
+			model = "mistral",
 			quit_map = "q",
 			retry_map = "<c-r>",
 			accept_map = "<c-cr>",
