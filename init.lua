@@ -268,7 +268,7 @@ require("lazy").setup({
 			},
 		},
 	},
-	{
+	{ -- TODO: review and check prompt types and create shortcuts
 		"David-Kunz/gen.nvim",
 		opts = {
 			model = "mistral",
