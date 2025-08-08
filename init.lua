@@ -83,10 +83,7 @@ end
 local function setup_catppuccin()
 	require("catppuccin").setup({
 		flavour = "mocha",
-		integrations = {
-			treesitter = true,
-			telescope = true,
-		},
+		auto_integrations = true,
 	})
 	vim.cmd.colorscheme("catppuccin")
 end
