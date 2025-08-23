@@ -23,19 +23,21 @@ vim.opt.wrap = false
 
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-vim.keymap.set("n", "<leader>gf", "<cmd>Telescope git_files<cr>")
-vim.keymap.set("n", "<leader>lg", "<cmd>Telescope live_grep<cr>")
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
+vim.keymap.set("n", "<leader>gf", "<cmd>Telescope git_files<cr>", { desc = "Find Git Files" })
+vim.keymap.set("n", "<leader>lg", "<cmd>Telescope live_grep<cr>", { desc = "Live Grep" })
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle File Tree" })
 vim.keymap.set("n", "<leader>tt", "<cmd>terminal<cr>", { desc = "Terminal" })
-vim.keymap.set("n", "<leader>la", "<cmd>Lazy<cr>")
-vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
+vim.keymap.set("n", "<leader>la", "<cmd>Lazy<cr>", { desc = "Lazy" })
+vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Git" })
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { desc = "Go to implementation" })
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
 vim.keymap.set("n", "<leader>ds", vim.lsp.buf.document_symbol, { desc = "Document Symbols" })
+vim.keymap.set("n", "<leader>ge", "<cmd>:Gen<cr>")
+vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
 
 local function setup_alpha()
 	local alpha = require("alpha")
@@ -82,10 +84,7 @@ end
 local function setup_catppuccin()
 	require("catppuccin").setup({
 		flavour = "mocha",
-		integrations = {
-			treesitter = true,
-			telescope = true,
-		},
+		auto_integrations = true,
 	})
 	vim.cmd.colorscheme("catppuccin")
 end
@@ -168,12 +167,6 @@ require("lazy").setup({
 	"nvim-treesitter/nvim-treesitter",
 	"nvim-telescope/telescope.nvim",
 	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }, config = setup_lualine },
-	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = setup_alpha,
-	},
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 	{
 		"catppuccin/nvim",
@@ -258,5 +251,59 @@ require("lazy").setup({
 	{
 		"SmiteshP/nvim-navic",
 		dependencies = { "neovim/nvim-lspconfig" },
+	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts = { preset = "helix", notify = true },
+		keys = {
+			{
+				"<leader>?",
+				function()
+					require("which-key").show({ global = false })
+				end,
+				desc = "Buffer Local Keymaps (which-key)",
+			},
+		},
+	},
+	{ -- TODO: review and check prompt types and create shortcuts
+		"David-Kunz/gen.nvim",
+		opts = {
+			model = "mistral",
+			quit_map = "q",
+			retry_map = "<c-r>",
+			accept_map = "<c-cr>",
+			host = "localhost",
+			port = "11434",
+			display_mode = "float",
+			show_prompt = false,
+			show_model = false,
+			no_auto_close = false,
+			file = false,
+			hidden = false,
+			init = function(options)
+				pcall(io.popen, "ollama serve > /dev/null 2>&1 &")
+			end,
+			command = function(options)
+				local body = { model = options.model, stream = true }
+				return "curl --silent --no-buffer -X POST http://"
+					.. options.host
+					.. ":"
+					.. options.port
+					.. "/api/chat -d $body"
+			end,
+			result_filetype = "markdown",
+			debug = false,
+		},
+	},
+	{
+		"folke/trouble.nvim",
+		opts = {},
+		cmd = "Trouble",
+	},
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {},
 	},
 })
