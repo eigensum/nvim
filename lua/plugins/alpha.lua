@@ -1,3 +1,7 @@
+-- alpha-nvim
+-- Alpha is a programmable greeter for neovim
+-- Github: https://github.com/goolord/alpha-nvim?tab=readme-ov-file
+
 local function setup_alpha()
 	local alpha = require("alpha")
 	local dashboard = require("alpha.themes.dashboard")

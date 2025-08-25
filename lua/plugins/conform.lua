@@ -1,3 +1,7 @@
+-- conform-nvim
+-- a lightweight formatter plugin
+-- Github: https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
+
 local function setup_conform()
 	require("conform").setup({
 		formatters_by_ft = {
@@ -6,6 +10,10 @@ local function setup_conform()
 			cpp = { "clang_format" },
 			rust = { "rustfmt" },
 			python = { "black" },
+			zig = { "zigfmt" },
+			nix = { "nixfmt" },
+			ocaml = { "ocamlformat" },
+			java = { "google-java-format" },
 		},
 		format_on_save = { timeout_ms = 500, lsp_fallback = true },
 	})

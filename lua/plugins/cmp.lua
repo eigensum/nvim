@@ -1,3 +1,7 @@
+-- nvim-cmp
+-- a completion plugin for neovim
+-- Github: https://github.com/hrsh7th/nvim-cmp
+
 local function setup_cmp()
 	local cmp = require("cmp")
 	local luasnip = require("luasnip")

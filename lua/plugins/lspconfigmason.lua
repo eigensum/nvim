@@ -1,6 +1,16 @@
 local function setup_mason_lspconfig()
 	require("mason-lspconfig").setup({
-		ensure_installed = { "lua_ls", "clangd", "rust_analyzer" },
+		ensure_installed = {
+			"lua_ls",
+			"clangd",
+			"rust_analyzer",
+			"zls",
+			"java_language_server",
+			"texlab",
+			"ocamllsp",
+			"pyrefly",
+			"pylsp",
+		},
 		automatic_installation = true,
 	})
 end
