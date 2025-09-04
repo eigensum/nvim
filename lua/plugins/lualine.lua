@@ -1,3 +1,7 @@
+-- lualine.nvim
+-- a status line for neovim
+-- Github: https://github.com/nvim-lualine/lualine.nvim
+
 local function setup_lualine()
 	require("lualine").setup({
 		options = {
@@ -11,6 +15,7 @@ local function setup_lualine()
 			lualine_b = { "branch", "diff" },
 			lualine_c = { "filename" },
 			lualine_x = { "encoding", "filetype" },
+			lualine_y = { "lsp_status" },
 			lualine_z = { "location" },
 		},
 	})

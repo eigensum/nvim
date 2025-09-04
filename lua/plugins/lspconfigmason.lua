@@ -1,3 +1,8 @@
+-- mason-lspconfig
+-- Manager for configuring lsps with mason.
+-- Languages: C/C++, Python, Lua, Rust, Zig, Java, OCamel, Latex
+-- Github: https://github.com/mason-org/mason-lspconfig.nvim
+
 local function setup_mason_lspconfig()
 	require("mason-lspconfig").setup({
 		ensure_installed = {

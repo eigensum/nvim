@@ -1,5 +1,19 @@
+-- nvim-navbuddy
+-- breadcrumbs popupferature for neovim
+-- Github: https://github.com/hasansujon786/nvim-navbuddy
+-- TODO: add shortcut for navbuddy
+-- TODO: rename navic to navbuddy
 local navic_settings = {
-	"SmiteshP/nvim-navic",
-	dependencies = { "neovim/nvim-lspconfig" },
+	"neovim/nvim-lspconfig",
+	dependencies = {
+		{
+			"SmiteshP/nvim-navbuddy",
+			dependencies = {
+				"SmiteshP/nvim-navic",
+				"MunifTanjim/nui.nvim",
+			},
+			opts = { lsp = { auto_attach = true } },
+		},
+	},
 }
 return navic_settings

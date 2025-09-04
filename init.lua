@@ -20,7 +20,8 @@ vim.opt.termguicolors = true
 vim.opt.wrap = false
 
 vim.g.mapleader = " "
-
+-- TODO: rework shortcuts
+-- TODO: trouble lsp toggle, trouble Symbols toggle
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
 vim.keymap.set("n", "<leader>gf", "<cmd>Telescope git_files<cr>", { desc = "Find Git Files" })
 vim.keymap.set("n", "<leader>lg", "<cmd>Telescope live_grep<cr>", { desc = "Live Grep" })

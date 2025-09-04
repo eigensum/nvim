@@ -1,3 +1,7 @@
+-- which-key.nvim
+-- popup for keybindings
+-- Github: https://github.com/folke/which-key.nvim
+
 local whichkey_settings = {
 	"folke/which-key.nvim",
 	event = "VeryLazy",

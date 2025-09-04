@@ -1,3 +1,7 @@
+-- lspconfig-nvim
+-- Simple lsp configs for neovim
+-- Github: https://github.com/neovim/nvim-lspconfig
+
 local function setup_nvim_lspconfig()
 	local capabilities = require("cmp_nvim_lsp").default_capabilities()
 	local navic = require("nvim-navic")
