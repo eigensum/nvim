@@ -52,7 +52,7 @@ require("lazy").setup({
 	{ require("plugins.lspconfigmason") },
 	{ require("plugins.lspconfignvim") },
 	{ require("plugins.cmp") },
-	{ require("plugins.navic") },
+	{ require("plugins.navbuddy") },
 	{ require("plugins.whichkey") },
 	{ require("plugins.gen") },
 	{ require("plugins.trouble") },
