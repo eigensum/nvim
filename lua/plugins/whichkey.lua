@@ -45,13 +45,32 @@ local function setup_whichkey()
 		},
 		{ "<leader>o", "<cmd>URLOpenUnderCursor<cr>", desc = "Open URL", icon = { icon = "", color = "cyan" } },
 		{ "<leader>t", "<cmd>terminal<cr>", desc = "Terminal", icon = { icon = "", color = "green" } },
-		{ "<leader>gg", "<cmd>LazyGit<cr>", desc = "Git", icon = { icon = "", color = "red" } },
-		{ "<leader>ga", "<cmd>Gen Ask<cr>", desc = "Ask LLM", icon = { icon = "", color = "purple" } },
-		{ "<leader>gc", "<cmd>Gen Change_Code<cr>", desc = "Change Code", icon = { icon = "", color = "purple" } },
-		{ "<leader>ge", "<cmd>Gen Enhance_Code<cr>", desc = "Enhance Code", icon = { icon = "", color = "purple" } },
-		{ "<leader>gr", "<cmd>Gen Review_Code<cr>", desc = "Review Code", icon = { icon = "", color = "purple" } },
-		{ "<leader>gw", "<cmd>Gen Generate<cr>", desc = "Write Code", icon = { icon = "󰵮", color = "purple" } },
-		{ "<leader>gf", "<cmd>Gen Chat<cr>", desc = "Chat with LLM", icon = { icon = "󰭻", color = "purple" } },
+		{ "<leader>g", "<cmd>LazyGit<cr>", desc = "Git", icon = { icon = "", color = "red" } },
+		{
+			"<leader>n",
+			jump_to_buffer,
+			desc = "Jump to Tab",
+			icon = { icon = "󰕅", color = "blue" },
+			expr = true,
+			silent = true,
+		},
+		{ "<leader>h", "<C-w>h", desc = "Left Split", icon = { icon = "", color = "yellow" } },
+		{ "<leader>l", "<C-w>l", desc = "Right Split", icon = { icon = "", color = "yellow" } },
+		{ "<leader>j", "<C-w>j", desc = "Bottom Split", icon = { icon = "", color = "yellow" } },
+		{ "<leader>k", "<C-w>k", desc = "Top Split", icon = { icon = "", color = "yellow" } },
+		{ "<leader>r", vim.lsp.buf.rename, desc = "Rename symbol", icon = { icon = "󰑕", color = "azure" } },
+	})
+	wk.add({
+		{ "<leader>c", group = "CoPilot", icon = { icon = "", color = "purple" } },
+		{ "<leader>ca", "<cmd>Gen Ask<cr>", desc = "Ask LLM", icon = { icon = "", color = "purple" } },
+		{ "<leader>cc", "<cmd>Gen Change_Code<cr>", desc = "Change Code", icon = { icon = "", color = "purple" } },
+		{ "<leader>ce", "<cmd>Gen Enhance_Code<cr>", desc = "Enhance Code", icon = { icon = "", color = "purple" } },
+		{ "<leader>cr", "<cmd>Gen Review_Code<cr>", desc = "Review Code", icon = { icon = "", color = "purple" } },
+		{ "<leader>cw", "<cmd>Gen Generate<cr>", desc = "Write Code", icon = { icon = "󰵮", color = "purple" } },
+		{ "<leader>cf", "<cmd>Gen Chat<cr>", desc = "Chat with LLM", icon = { icon = "󰭻", color = "purple" } },
+	})
+	wk.add({
+		{ "<leader>f", group = "Find", icon = { icon = "", color = "green" } },
 		{
 			"<leader>ff",
 			"<cmd>Telescope find_files<cr>",
@@ -66,6 +85,9 @@ local function setup_whichkey()
 		},
 		{ "<leader>fw", "<cmd>Telescope live_grep<cr>", desc = "Find Code", icon = { icon = "󱩾", color = "blue" } },
 		{ "<leader>ft", "<cmd>TodoTelescope<cr>", desc = "Find Tag", icon = { icon = "󱤇", color = "cyan" } },
+	})
+	wk.add({
+		{ "<leader>x", group = "Utils", icon = { icon = "󱁤", color = "azure" } },
 		{ "<leader>xd", vim.lsp.buf.definition, desc = "Go to definition", icon = { icon = "󱪗", color = "azure" } },
 		{
 			"<leader>xi",
@@ -74,7 +96,6 @@ local function setup_whichkey()
 			icon = { icon = "", color = "azure" },
 		},
 		{ "<leader>xh", vim.lsp.buf.hover, desc = "Hover documentation", icon = { icon = "󱔗", color = "azure" } },
-		{ "<leader>rn", vim.lsp.buf.rename, desc = "Rename symbol", icon = { icon = "󰑕", color = "azure" } },
 		{
 			"<leader>xx",
 			"<cmd>Trouble diagnostics toggle<cr>",
@@ -88,29 +109,31 @@ local function setup_whichkey()
 			icon = { icon = "󱉯", color = "azure" },
 		},
 		{ "<leader>xn", "<cmd>Navbuddy<cr>", desc = "Navbuddy", icon = { icon = "󰎐", color = "blue" } },
+	})
+	wk.add({
+		{ "<leader>m", group = "Managers", icon = { icon = "", color = "orange" } },
 		{ "<leader>ml", "<cmd>Lazy<cr>", desc = "Lazy", icon = { icon = "", color = "orange" } },
 		{ "<leader>mm", "<cmd>Mason<cr>", desc = "Mason", icon = { icon = "󰢷", color = "orange" } },
-		{ "<leader>xs", cycle_languages, desc = "Cycle Spellcheckers", icon = { icon = "", color = "red" } },
+		{ "<leader>ms", cycle_languages, desc = "Cycle Spellcheckers", icon = { icon = "", color = "red" } },
+	})
+	wk.add({
+		{ "<leader>b", group = "Tabs", icon = { icon = "󰓩", color = "yellow" } },
 		{
 			"<leader>bh",
 			"<cmd>BufferMovePrevious<cr>",
 			desc = "Move Tab Left",
-			icon = { icon = "󰛁", color = "blue" },
+			icon = { icon = "󰛁", color = "yellow" },
 		},
-		{ "<leader>bl", "<cmd>BufferMoveNext<cr>", desc = "Move Tab Right", icon = { icon = "󰛂", color = "blue" } },
 		{
-			"<leader>n",
-			jump_to_buffer,
-			desc = "Jump to Tab",
-			icon = { icon = "󰕅", color = "blue" },
-			expr = true,
-			silent = true,
+			"<leader>bl",
+			"<cmd>BufferMoveNext<cr>",
+			desc = "Move Tab Right",
+			icon = { icon = "󰛂", color = "yellow" },
 		},
-		{ "<leader>bc", "<cmd>BufferClose<cr>", desc = "Close Tab", icon = { icon = "󰅗", color = "blue" } },
-		{ "<leader>h", "<C-w>h", desc = "Left Split", icon = { icon = "", color = "yellow" } },
-		{ "<leader>l", "<C-w>l", desc = "Right Split", icon = { icon = "", color = "yellow" } },
-		{ "<leader>j", "<C-w>j", desc = "Bottom Split", icon = { icon = "", color = "yellow" } },
-		{ "<leader>k", "<C-w>k", desc = "Top Split", icon = { icon = "", color = "yellow" } },
+		{ "<leader>bc", "<cmd>BufferClose<cr>", desc = "Close Tab", icon = { icon = "󰅗", color = "yellow" } },
+	})
+	wk.add({
+		{ "<leader>s", group = "Splits", icon = { icon = "󰤼", color = "yellow" } },
 		{ "<leader>sh", "<cmd>sp<cr>", desc = "Split Horizontal", icon = { icon = "󰯋", color = "yellow" } },
 		{ "<leader>sv", "<cmd>vsp<cr>", desc = "Split Vertical", icon = { icon = "󰯌", color = "yellow" } },
 		{ "<leader>sc", "<cmd>only<cr>", desc = "Close all Splits", icon = { icon = "", color = "yellow" } },
