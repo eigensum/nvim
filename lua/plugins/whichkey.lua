@@ -4,6 +4,8 @@
 
 local function setup_whichkey()
 	local wk = require("which-key")
+	local opts = { preset = "helix", notify = true }
+	wk.setup(opts)
 	wk.add({
 		{
 			"<leader>e",
@@ -11,6 +13,7 @@ local function setup_whichkey()
 			desc = "File Tree",
 			icon = { icon = "", color = "blue" },
 		},
+		{ "<leader>o", "<cmd>URLOpenUnderCursor<cr>", desc = "Open URL", icon = { icon = "", color = "cyan" } },
 		{ "<leader>tt", "<cmd>terminal<cr>", desc = "Terminal", icon = { icon = "", color = "green" } },
 		{ "<leader>gg", "<cmd>LazyGit<cr>", desc = "Git", icon = { icon = "", color = "red" } },
 		{
@@ -42,6 +45,13 @@ local function setup_whichkey()
 			desc = "Diagnostics (Trouble)",
 			icon = { icon = "", color = "azure" },
 		},
+		{
+			"<leader>xs",
+			"<cmd>Trouble symbols toggle<cr>",
+			desc = "Symbols (Trouble)",
+			icon = { icon = "󱉯", color = "azure" },
+		},
+		{ "<leader>xn", "<cmd>Navbuddy<cr>", desc = "Navbuddy", icon = { icon = "󰎐", color = "blue" } },
 		{ "<leader>ml", "<cmd>Lazy<cr>", desc = "Lazy", icon = { icon = "", color = "orange" } },
 		{ "<leader>mm", "<cmd>Mason<cr>", desc = "Mason", icon = { icon = "󰢷", color = "orange" } },
 	})
@@ -50,7 +60,6 @@ end
 local whichkey_settings = {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
-	opts = { preset = "helix", notify = true },
 	config = setup_whichkey,
 }
 return whichkey_settings

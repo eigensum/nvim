@@ -21,10 +21,8 @@ vim.opt.wrap = false
 
 -- TODO: Rechtsschreibprüfer
 -- TODO: tabs
--- TODO: easily open links
+-- TODO: redo start screen
 vim.g.mapleader = " "
--- TODO: rework shortcuts
--- TODO: trouble lsp toggle, trouble Symbols toggle
 
 require("lazy").setup({
 	{ require("plugins.treesitter") },
@@ -45,4 +43,5 @@ require("lazy").setup({
 	{ require("plugins.gen") },
 	{ require("plugins.trouble") },
 	{ require("plugins.todo") },
+	{ require("plugins.urlopen") },
 })

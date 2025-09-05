@@ -1,7 +1,7 @@
 -- nvim-navbuddy
 -- breadcrumbs popupferature for neovim
 -- Github: https://github.com/hasansujon786/nvim-navbuddy
--- TODO: add shortcut for navbuddy
+
 local navic_settings = {
 	"neovim/nvim-lspconfig",
 	dependencies = {

@@ -8,5 +8,3 @@ local todo_settings = {
 	opts = {},
 }
 return todo_settings
--- TODO: add shortcut for todo telescope
--- TODO: add shortcut for todo trouble
