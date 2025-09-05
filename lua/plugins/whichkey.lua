@@ -19,6 +19,19 @@ local function cycle_languages()
 		return
 	end
 end
+
+local function jump_to_buffer()
+	local key = vim.fn.getcharstr()
+	if key:match("%d") then
+		if key == "0" then
+			return "<cmd>BufferLast<cr>"
+		else
+			return "<cmd>BufferGoto" .. key .. "<cr>"
+		end
+	end
+	return ""
+end
+
 local function setup_whichkey()
 	local wk = require("which-key")
 	local opts = { preset = "helix", notify = true }
@@ -31,7 +44,7 @@ local function setup_whichkey()
 			icon = { icon = "", color = "blue" },
 		},
 		{ "<leader>o", "<cmd>URLOpenUnderCursor<cr>", desc = "Open URL", icon = { icon = "", color = "cyan" } },
-		{ "<leader>tt", "<cmd>terminal<cr>", desc = "Terminal", icon = { icon = "", color = "green" } },
+		{ "<leader>t", "<cmd>terminal<cr>", desc = "Terminal", icon = { icon = "", color = "green" } },
 		{ "<leader>gg", "<cmd>LazyGit<cr>", desc = "Git", icon = { icon = "", color = "red" } },
 		{ "<leader>ga", "<cmd>Gen Ask<cr>", desc = "Ask LLM", icon = { icon = "", color = "purple" } },
 		{ "<leader>gc", "<cmd>Gen Change_Code<cr>", desc = "Change Code", icon = { icon = "", color = "purple" } },
@@ -77,7 +90,30 @@ local function setup_whichkey()
 		{ "<leader>xn", "<cmd>Navbuddy<cr>", desc = "Navbuddy", icon = { icon = "󰎐", color = "blue" } },
 		{ "<leader>ml", "<cmd>Lazy<cr>", desc = "Lazy", icon = { icon = "", color = "orange" } },
 		{ "<leader>mm", "<cmd>Mason<cr>", desc = "Mason", icon = { icon = "󰢷", color = "orange" } },
-		{ "<leader>s", cycle_languages, desc = "Cycle Spellcheckers", icon = { icon = "", color = "red" } },
+		{ "<leader>xs", cycle_languages, desc = "Cycle Spellcheckers", icon = { icon = "", color = "red" } },
+		{
+			"<leader>bh",
+			"<cmd>BufferMovePrevious<cr>",
+			desc = "Move Tab Left",
+			icon = { icon = "󰛁", color = "blue" },
+		},
+		{ "<leader>bl", "<cmd>BufferMoveNext<cr>", desc = "Move Tab Right", icon = { icon = "󰛂", color = "blue" } },
+		{
+			"<leader>n",
+			jump_to_buffer,
+			desc = "Jump to Tab",
+			icon = { icon = "󰕅", color = "blue" },
+			expr = true,
+			silent = true,
+		},
+		{ "<leader>bc", "<cmd>BufferClose<cr>", desc = "Close Tab", icon = { icon = "󰅗", color = "blue" } },
+		{ "<leader>h", "<C-w>h", desc = "Left Split", icon = { icon = "", color = "yellow" } },
+		{ "<leader>l", "<C-w>l", desc = "Right Split", icon = { icon = "", color = "yellow" } },
+		{ "<leader>j", "<C-w>j", desc = "Bottom Split", icon = { icon = "", color = "yellow" } },
+		{ "<leader>k", "<C-w>k", desc = "Top Split", icon = { icon = "", color = "yellow" } },
+		{ "<leader>sh", "<cmd>sp<cr>", desc = "Split Horizontal", icon = { icon = "󰯋", color = "yellow" } },
+		{ "<leader>sv", "<cmd>vsp<cr>", desc = "Split Vertical", icon = { icon = "󰯌", color = "yellow" } },
+		{ "<leader>sc", "<cmd>only<cr>", desc = "Close all Splits", icon = { icon = "", color = "yellow" } },
 	})
 end
 
