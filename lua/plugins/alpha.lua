@@ -19,15 +19,15 @@ local function setup_alpha()
 	}
 
 	dashboard.section.buttons.val = {
-		dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
-		dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"),
-		dashboard.button("g", "  Grep text", ":Telescope live_grep<CR>"),
-		dashboard.button("v", "⎇  Git repository", ":LazyGit<CR>"),
-		dashboard.button("n", "  New file", ":ene <BAR> startinsert<CR>"),
-		dashboard.button("p", "⇌  Plugins", ":Lazy<CR>"),
-		dashboard.button("m", "⛏  Mason", ":Mason<CR>"),
-		dashboard.button("c", "  Config", ":edit $MYVIMRC<CR>"),
-		dashboard.button("q", "➥  Quit", ":qa<CR>"),
+		dashboard.button("f", "󰥨 Find file", ":Telescope find_files<CR>"),
+		dashboard.button("r", "󱋡 Recent files", ":Telescope oldfiles<CR>"),
+		dashboard.button("g", "󰱼 Grep text", ":Telescope live_grep<CR>"),
+		dashboard.button("v", " Git repository", ":LazyGit<CR>"),
+		dashboard.button("n", " New file", ":ene <BAR> startinsert<CR>"),
+		dashboard.button("p", " Plugins", ":Lazy<CR>"),
+		dashboard.button("m", "󰢷 Mason", ":Mason<CR>"),
+		dashboard.button("c", " Config", ":edit $MYVIMRC<CR>"),
+		dashboard.button("q", "󱊷 Quit", ":qa<CR>"),
 	}
 
 	dashboard.section.footer.val =

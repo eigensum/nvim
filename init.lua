@@ -19,8 +19,6 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 
--- TODO: tabs
--- TODO: redo start screen
 vim.g.mapleader = " "
 
 require("lazy").setup({
