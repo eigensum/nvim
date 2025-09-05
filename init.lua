@@ -19,7 +19,6 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 
--- TODO: Rechtsschreibprüfer
 -- TODO: tabs
 -- TODO: redo start screen
 vim.g.mapleader = " "
@@ -44,4 +43,5 @@ require("lazy").setup({
 	{ require("plugins.trouble") },
 	{ require("plugins.todo") },
 	{ require("plugins.urlopen") },
+	{ require("plugins.barbar") },
 })

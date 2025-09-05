@@ -2,6 +2,23 @@
 -- popup for keybindings
 -- Github: https://github.com/folke/which-key.nvim
 
+local function cycle_languages()
+	local active = vim.opt.spell:get()
+	local current = vim.opt.spelllang:get()[1]
+	if not active then
+		vim.opt.spell = true
+		vim.opt.spelllang = "en"
+		return
+	end
+	if current == "en" then
+		vim.opt.spelllang = "de"
+		return
+	end
+	if current == "de" then
+		vim.opt.spell = false
+		return
+	end
+end
 local function setup_whichkey()
 	local wk = require("which-key")
 	local opts = { preset = "helix", notify = true }
@@ -60,6 +77,7 @@ local function setup_whichkey()
 		{ "<leader>xn", "<cmd>Navbuddy<cr>", desc = "Navbuddy", icon = { icon = "󰎐", color = "blue" } },
 		{ "<leader>ml", "<cmd>Lazy<cr>", desc = "Lazy", icon = { icon = "", color = "orange" } },
 		{ "<leader>mm", "<cmd>Mason<cr>", desc = "Mason", icon = { icon = "󰢷", color = "orange" } },
+		{ "<leader>s", cycle_languages, desc = "Cycle Spellcheckers", icon = { icon = "", color = "red" } },
 	})
 end
 
