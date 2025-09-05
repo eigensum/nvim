@@ -16,6 +16,12 @@ local function setup_whichkey()
 		{ "<leader>o", "<cmd>URLOpenUnderCursor<cr>", desc = "Open URL", icon = { icon = "", color = "cyan" } },
 		{ "<leader>tt", "<cmd>terminal<cr>", desc = "Terminal", icon = { icon = "", color = "green" } },
 		{ "<leader>gg", "<cmd>LazyGit<cr>", desc = "Git", icon = { icon = "", color = "red" } },
+		{ "<leader>ga", "<cmd>Gen Ask<cr>", desc = "Ask LLM", icon = { icon = "", color = "purple" } },
+		{ "<leader>gc", "<cmd>Gen Change_Code<cr>", desc = "Change Code", icon = { icon = "", color = "purple" } },
+		{ "<leader>ge", "<cmd>Gen Enhance_Code<cr>", desc = "Enhance Code", icon = { icon = "", color = "purple" } },
+		{ "<leader>gr", "<cmd>Gen Review_Code<cr>", desc = "Review Code", icon = { icon = "", color = "purple" } },
+		{ "<leader>gw", "<cmd>Gen Generate<cr>", desc = "Write Code", icon = { icon = "󰵮", color = "purple" } },
+		{ "<leader>gf", "<cmd>Gen Chat<cr>", desc = "Chat with LLM", icon = { icon = "󰭻", color = "purple" } },
 		{
 			"<leader>ff",
 			"<cmd>Telescope find_files<cr>",

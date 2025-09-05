@@ -1,4 +1,8 @@
-local gen_settings = { -- TODO: review and check prompt types and create shortcuts
+-- gen.nvim
+-- plugin to easily use llms in neovim
+-- Github: https://github.com/David-Kunz/gen.nvim
+
+local gen_settings = {
 	"David-Kunz/gen.nvim",
 	opts = {
 		model = "mistral",
