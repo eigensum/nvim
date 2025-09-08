@@ -108,7 +108,7 @@ local function setup_whichkey()
 			desc = "Symbols (Trouble)",
 			icon = { icon = "󱉯", color = "azure" },
 		},
-		{ "<leader>xn", "<cmd>Navbuddy<cr>", desc = "Navbuddy", icon = { icon = "󰎐", color = "blue" } },
+		{ "<leader>xn", "<cmd>Navbuddy<cr>", desc = "Navbuddy", icon = { icon = "󰎐", color = "azure" } },
 	})
 	wk.add({
 		{ "<leader>m", group = "Managers", icon = { icon = "", color = "orange" } },
