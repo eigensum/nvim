@@ -15,6 +15,7 @@ local function setup_mason_lspconfig()
 			"ocamllsp",
 			"pyrefly",
 			"pylsp",
+			"marksman",
 		},
 		automatic_installation = true,
 	})

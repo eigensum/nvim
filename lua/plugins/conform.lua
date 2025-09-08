@@ -14,6 +14,7 @@ local function setup_conform()
 			nix = { "nixfmt" },
 			ocaml = { "ocamlformat" },
 			java = { "google-java-format" },
+			markdown = { "mdformat" },
 		},
 		format_on_save = { timeout_ms = 500, lsp_fallback = true },
 	})
