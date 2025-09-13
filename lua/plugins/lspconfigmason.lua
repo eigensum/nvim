@@ -4,21 +4,8 @@
 -- Github: https://github.com/mason-org/mason-lspconfig.nvim
 
 local function setup_mason_lspconfig()
-	require("mason-lspconfig").setup({
-		ensure_installed = {
-			"lua_ls",
-			"clangd",
-			"rust_analyzer",
-			"zls",
-			"java_language_server",
-			"texlab",
-			"ocamllsp",
-			"pyrefly",
-			"pylsp",
-			"marksman",
-		},
-		automatic_installation = true,
-	})
+	local lsps = require("configs.lsps")
+	require("mason-lspconfig").setup({ ensure_installed = lsps, automatic_installation = true })
 end
 
 local mason_lspconfig_settings = { "williamboman/mason-lspconfig.nvim", config = setup_mason_lspconfig }

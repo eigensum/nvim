@@ -4,19 +4,7 @@
 
 local function setup_conform()
 	require("conform").setup({
-		formatters_by_ft = {
-			lua = { "stylua" },
-			c = { "clang_format" },
-			cpp = { "clang_format" },
-			rust = { "rustfmt" },
-			python = { "black" },
-			zig = { "zigfmt" },
-			nix = { "nixfmt" },
-			ocaml = { "ocamlformat" },
-			java = { "google-java-format" },
-			markdown = { "mdformat" },
-			tex = { "tex-fmt" },
-		},
+		formatters_by_ft = require("configs.formatters"),
 		format_on_save = { timeout_ms = 500, lsp_fallback = true },
 	})
 end
