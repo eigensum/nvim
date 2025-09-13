@@ -1,6 +1,16 @@
 -- which-key.nvim
 -- popup for keybindings
 -- Github: https://github.com/folke/which-key.nvim
+-- Icons Cheat Sheet: https://www.nerdfonts.com/cheat-sheet
+
+local function cycle_markdown_render()
+	local status = require("render-markdown").get()
+	if status == true then
+		require("render-markdown").disable()
+	else
+		require("render-markdown").enable()
+	end
+end
 
 local function cycle_languages()
 	local active = vim.opt.spell:get()
@@ -109,6 +119,7 @@ local function setup_whichkey()
 			icon = { icon = "󱉯", color = "azure" },
 		},
 		{ "<leader>xn", "<cmd>Navbuddy<cr>", desc = "Navbuddy", icon = { icon = "󰎐", color = "azure" } },
+		{ "<leader>xm", cycle_markdown_render, desc = "Render Markdown", icon = { icon = "", color = "azure" } },
 	})
 	wk.add({
 		{ "<leader>m", group = "Managers", icon = { icon = "", color = "orange" } },

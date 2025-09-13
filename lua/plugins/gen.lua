@@ -1,7 +1,7 @@
 -- gen.nvim
 -- plugin to easily use llms in neovim
 -- Github: https://github.com/David-Kunz/gen.nvim
-
+-- TODO: write the model files properly
 local gen_settings = {
 	"David-Kunz/gen.nvim",
 	opts = {
@@ -32,7 +32,7 @@ local gen_settings = {
 				.. options.port
 				.. "/api/chat -d $body"
 		end,
-		result_filetype = "txt",
+		result_filetype = "markdown",
 		debug = false,
 	},
 }

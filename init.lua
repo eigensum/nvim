@@ -42,4 +42,5 @@ require("lazy").setup({
 	{ require("plugins.todo") },
 	{ require("plugins.urlopen") },
 	{ require("plugins.barbar") },
+	{ require("plugins.rendermarkdown") },
 })
