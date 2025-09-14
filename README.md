@@ -26,7 +26,7 @@ LSPs and formatters should be set in the respective files under `configs`. The k
 | **catppuccin** | Color scheme plugin | |
 | **alpha** | Neovim welcome screen | |
 | **tree** | File tree explorer | |
-| **conform** | Lint and format code | formats on save |
+| **conform** | format code | formats on save |
 | **lazygit** | Git integration for Neovim | |
 | **mason** | Package manager for LSPs, DAPs, linters, and formatters | |
 | **lspconfigmason** | Integrates mason with lspconfig | set the desired LSPs in `configs/lsps.lua`|
