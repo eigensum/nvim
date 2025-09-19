@@ -44,5 +44,4 @@ require("lazy").setup({
 	{ require("plugins.barbar") },
 	{ require("plugins.rendermarkdown") },
 	{ require("plugins.masontoolinstaller") },
-	{ require("plugins.overseer") },
 })
