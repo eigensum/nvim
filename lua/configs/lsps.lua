@@ -14,7 +14,6 @@ return {
 	-- OCaml
 	"ocamllsp",
 	-- Python
-	"pyrefly",
 	"pylsp",
 	-- Markdown
 	"marksman",
