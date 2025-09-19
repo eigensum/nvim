@@ -149,17 +149,6 @@ local function setup_whichkey()
 		{ "<leader>sv", "<cmd>vsp<cr>", desc = "Split Vertical", icon = { icon = "󰯌", color = "yellow" } },
 		{ "<leader>sc", "<cmd>only<cr>", desc = "Close all Splits", icon = { icon = "", color = "yellow" } },
 	})
-	wk.add({
-		{ "<leader>B", group = "Build", icon = { icon = "󱁤", color = "green" } },
-		{
-			"<leader>Bt",
-			"<cmd>OverseerToggle<cr>",
-			desc = "Toggle Build Tasks",
-			icon = { icon = "", color = "green" },
-		},
-		{ "<leader>Br", "<cmd>OverseerRun<cr>", desc = "Build Project", icon = { icon = "", color = "green" } },
-		{ "<leader>Bi", "<cmd>OverseerInfo<cr>", desc = "Build Info", icon = { icon = "󱂷", color = "green" } },
-	})
 end
 
 local whichkey_settings = {
