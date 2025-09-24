@@ -17,4 +17,6 @@ return {
 	"pylsp",
 	-- Markdown
 	"marksman",
+	-- Nix
+	"nix_ls",
 }
