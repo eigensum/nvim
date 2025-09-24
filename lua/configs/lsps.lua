@@ -1,5 +1,4 @@
 return {
-	"yq",
 	-- Lua
 	"lua_ls",
 	-- C/C++
@@ -18,6 +17,4 @@ return {
 	"pylsp",
 	-- Markdown
 	"marksman",
-	-- Nix
-	"nil_ls",
 }
