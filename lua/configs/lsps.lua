@@ -1,4 +1,5 @@
 return {
+	"yq",
 	-- Lua
 	"lua_ls",
 	-- C/C++
@@ -18,5 +19,5 @@ return {
 	-- Markdown
 	"marksman",
 	-- Nix
-	"nil",
+	"nil_ls",
 }
