@@ -18,5 +18,5 @@ return {
 	-- Markdown
 	"marksman",
 	-- Nix
-	"nil_ls",
+	"nil",
 }
