@@ -6,5 +6,5 @@ return {
 	ocaml = { "ocamlformat" },
 	markdown = { "mdformat" },
 	tex = { "tex-fmt" },
-	nix = { "nixfmt" },
+	nix = { "alejandra" },
 }
