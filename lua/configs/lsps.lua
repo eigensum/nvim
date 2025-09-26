@@ -7,8 +7,6 @@ return {
 	"rust_analyzer",
 	-- Zig
 	"zls",
-	-- Java
-	"java_language_server",
 	-- LaTeX
 	"texlab",
 	-- OCaml
