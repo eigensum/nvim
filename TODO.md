@@ -3,3 +3,5 @@
 - remove old mason thingy (all mason plugins and keybinds)
 - add formatters to new setup
 - test config 
+- Update readme
+- remove this file
