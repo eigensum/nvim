@@ -12,26 +12,16 @@ local function setup_nvim_lspconfig()
 		end
 	end
 
-	vim.lsp.config("lua_ls", {
-		capabilities = capabilities,
-		on_attach = on_attach,
-		settings = {
-			Lua = {
-				runtime = { version = "LuaJIT" },
-				diagnostics = { globals = { "vim", "require" } },
-			},
-		},
-	})
+	-- Configure LSPs
+	local servers = require("lua.configs.lsps")
 
-	vim.lsp.config("clangd", {
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-
-	vim.lsp.config("rust_analyzer", {
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
+	for server, opts in pairs(servers) do
+		vim.lsp.config(server, {
+			capabilities = capabilities,
+			on_attach = on_attach,
+			settings = opts,
+		})
+	end
 end
 
 local nvim_lspconfig_settings = { "neovim/nvim-lspconfig", config = setup_nvim_lspconfig }
