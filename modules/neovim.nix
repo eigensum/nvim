@@ -57,7 +57,9 @@ in {
     set spellsuggest=best,9
     ''
 
-home.file.".config/nvim".source = nvimConfig;
+home.file = {
+  ".config/nvim".source = nvimConfig;
+};
 
   };
 }
