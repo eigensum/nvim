@@ -3,16 +3,17 @@
 let
   nvimConfig = builtins.fetchGit {
     url = "https://github.com/eigensum/nvim";
-    ref = "main";  
+    ref = "main";
   };
 in
 {
   options.programs.myNeovim.enable = lib.mkEnableOption "Enable eigensum's Neovim setup";
 
   config = lib.mkIf config.programs.myNeovim.enable {
-    programs.neovim.enable = true;
+    programs.neovim = {
+      enable = true;
 
-extraPackages = with pkgs; [
+      extraPackages = with pkgs; [
         ripgrep
         lazygit
         ollama
@@ -32,7 +33,7 @@ extraPackages = with pkgs; [
         ocamlPackages.ocaml-lsp
         zls
         texlab
-        zathura 
+        zathura
         lua-language-server
 
         # Formatters
@@ -45,11 +46,12 @@ extraPackages = with pkgs; [
         stylua
       ];
 
-    programs.neovim.extraConfig = ''
-      set spell
-      set spelllang=de,en
-      set spellsuggest=best,9
-    '';
+      extraConfig = ''
+        set spell
+        set spelllang=de,en
+        set spellsuggest=best,9
+      '';
+    };
 
     home.file = {
       ".config/nvim".source = nvimConfig;
