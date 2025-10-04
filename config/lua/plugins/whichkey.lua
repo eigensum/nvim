@@ -124,7 +124,6 @@ local function setup_whichkey()
 	wk.add({
 		{ "<leader>m", group = "Managers", icon = { icon = "", color = "orange" } },
 		{ "<leader>ml", "<cmd>Lazy<cr>", desc = "Lazy", icon = { icon = "", color = "orange" } },
-		{ "<leader>mm", "<cmd>Mason<cr>", desc = "Mason", icon = { icon = "󰢷", color = "orange" } },
 		{ "<leader>ms", cycle_languages, desc = "Cycle Spellcheckers", icon = { icon = "", color = "red" } },
 	})
 	wk.add({

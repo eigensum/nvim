@@ -31,8 +31,6 @@ require("lazy").setup({
 	{ require("plugins.tree") },
 	{ require("plugins.conform") },
 	{ require("plugins.lazygit") },
-	{ require("plugins.mason") },
-	{ require("plugins.lspconfigmason") },
 	{ require("plugins.lspconfignvim") },
 	{ require("plugins.cmp") },
 	{ require("plugins.navbuddy") },
@@ -43,5 +41,4 @@ require("lazy").setup({
 	{ require("plugins.urlopen") },
 	{ require("plugins.barbar") },
 	{ require("plugins.rendermarkdown") },
-	{ require("plugins.masontoolinstaller") },
 })
