@@ -26,14 +26,12 @@ in
         # LSPs
         rustup
         java-language-server
-        rocmPackages.clang
         marksman
         python313Packages.python-lsp-server
         nil
         ocamlPackages.ocaml-lsp
         zls
         texlab
-        zathura
         lua-language-server
 
         # Formatters
@@ -44,7 +42,10 @@ in
         ocamlformat_0_26_2
         tex-fmt
         stylua
-      ];
+      ]++ lib.optionals pkgs.stdenv.isLinux [
+          zathura
+          rocmPackages.clang
+        ];
 
       extraConfig = ''
         set spell
