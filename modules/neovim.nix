@@ -4,7 +4,7 @@ let
   nvimConfig = pkgs.fetchgit {
     url = "https://github.com/eigensum/nvim";
     rev = "1796660";   
-    sha256 = "";    
+    sha256 = "0000000000000000000000000000000000000000000000000000";    
   };
 in
 {
