@@ -1,20 +1,18 @@
 { config, pkgs, lib, ... }:
 
 let
-  nvimConfig = pkgs.fetchgit {
+  nvimConfig = builtins.fetchGit {
     url = "https://github.com/eigensum/nvim";
-    rev = "1796660";   
-    sha256 = "0000000000000000000000000000000000000000000000000000";    
+    ref = "main";  
   };
 in
 {
   options.programs.myNeovim.enable = lib.mkEnableOption "Enable eigensum's Neovim setup";
 
   config = lib.mkIf config.programs.myNeovim.enable {
-    programs.neovim = {
-      enable = true;
+    programs.neovim.enable = true;
 
-      extraPackages = with pkgs; [
+extraPackages = with pkgs; [
         ripgrep
         lazygit
         ollama
@@ -47,17 +45,15 @@ in
         stylua
       ];
 
-      extraConfig = ''
-        set spell
-        set spelllang=de,en
-        set spellsuggest=best,9
-      '';
+    programs.neovim.extraConfig = ''
+      set spell
+      set spelllang=de,en
+      set spellsuggest=best,9
+    '';
+
+    home.file = {
+      ".config/nvim".source = nvimConfig;
     };
-
-home.file = {
-  ".config/nvim".source = nvimConfig;
-};
-
   };
 }
 
