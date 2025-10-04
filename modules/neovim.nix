@@ -1,11 +1,5 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, eigen-neovim, ... }:
 
-let
-  nvimConfig = builtins.fetchGit {
-    url = "https://github.com/eigensum/nvim";
-    ref = "main";
-  };
-in
 {
   options.programs.myNeovim.enable = lib.mkEnableOption "Enable eigensum's Neovim setup";
 
@@ -42,10 +36,10 @@ in
         ocamlformat_0_26_2
         tex-fmt
         stylua
-      ]++ lib.optionals pkgs.stdenv.isLinux [
-          zathura
-          rocmPackages.clang
-        ];
+      ] ++ lib.optionals pkgs.stdenv.isLinux [
+        zathura
+        rocmPackages.clang
+      ];
 
       extraConfig = ''
         set spell
@@ -55,8 +49,9 @@ in
     };
 
     home.file = {
-      ".config/nvim".source = nvimConfig;
+      # Use the flake input path instead of fetchGit
+      ".config/nvim".source = eigen-neovim;
+      # If your config is in a subdirectory, use: eigen-neovim + "/nvim"
     };
   };
 }
-
