@@ -57,6 +57,7 @@ in {
     set spellsuggest=best,9
     ''
 
-    xdg.configFile."nvim".source = nvimConfig;
+home.file.".config/nvim".source = nvimConfig;
+
   };
 }
