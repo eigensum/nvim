@@ -35,6 +35,7 @@ in {
         ocamlPackages.ocaml-lsp # OCaml
         zls # Zig
         texlab # LaTeX
+        zathura 
         lua-language-server # Lua
 
         # Formatters
@@ -49,6 +50,12 @@ in {
         stylua # Lua
       ];
     };
+
+    extraConfig = ''
+    set spell 
+    set spelllang=de,en
+    set spellsuggest=best,9
+    ''
 
     xdg.configFile."nvim".source = nvimConfig;
   };
