@@ -54,9 +54,10 @@ in
       '';
     };
 
-    home.file = {
-      ".config/nvim/init.lua".source = "${nvimConfig}/init.lua";
-    };
+home.file = {
+  ".config/nvim".source = nvimConfig;
+};
+
   };
 }
 
