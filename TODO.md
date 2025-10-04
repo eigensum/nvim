@@ -1,4 +1,3 @@
-- add formatters to new setup
 - test config 
 - Update readme
 - remove this file
