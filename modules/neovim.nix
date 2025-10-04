@@ -49,9 +49,7 @@
     };
 
     home.file = {
-      # Use the flake input path instead of fetchGit
-      ".config/nvim".source = eigen-neovim;
-      # If your config is in a subdirectory, use: eigen-neovim + "/nvim"
+    ".config/nvim".source = eigen-neovim + "/config";
     };
   };
 }
