@@ -1,6 +1,3 @@
-- add all lsps to the config lsp thingy
-- activate them properly in lsp_config_nvim
-- remove old mason thingy (all mason plugins and keybinds)
 - add formatters to new setup
 - test config 
 - Update readme
