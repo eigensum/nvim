@@ -16,7 +16,6 @@ local function spell_check()
 		return language
 	end
 end
-local function setup_lualine()
 	require("lualine").setup({
 		options = {
 			theme = "catppuccin",
@@ -33,9 +32,4 @@ local function setup_lualine()
 			lualine_z = { "location" },
 		},
 	})
-end
 
-local lualine_settings =
-	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }, config = setup_lualine }
-
-return lualine_settings

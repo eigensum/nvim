@@ -32,6 +32,17 @@
         barbar-nvim
         render-markdown-nvim
         nvim-web-devicons
+        gitsigns-nvim
+        nvim-cmp
+        cmp-nvim-lsp
+        cmp-buffer
+        cmp-path
+        cmp-cmdline
+        luasnip
+        cmp_luasnip
+        plenary-nvim
+        nvim-navic
+        nui-nvim
       ];
 
       extraPackages = with pkgs;
