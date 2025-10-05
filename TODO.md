@@ -1,3 +1,0 @@
-- test config 
-- Update readme
-- remove this file

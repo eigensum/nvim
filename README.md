@@ -2,15 +2,13 @@
 
 ## Overview
 
-This Neovim configuration uses [Lazy.nvim](https://github.com/folke/lazy.nvim) for plugin management. The configuration is organized into modular plugins that handle different aspects of the editor experience.
+The configuration is organized into modular plugins that handle different aspects of the editor experience.
 
 ## Configuration Structure
 
 The configuration is structured with:
 
-- **Lazy.nvim** as the plugin manager
 - **Core settings** in `vim.opt` for basic editor behavior
-- **Plugin loading** via `require("lazy").setup()`
 - **Modular plugins** organized in separate files (e.g., `plugins/treesitter.lua`, `plugins/telescope.lua`) which can be found under `lua/plugins`.
 
 LSPs and formatters should be set in the respective files under `configs`. The keybindings are set in the configuration of `whichkey.nvim`.
