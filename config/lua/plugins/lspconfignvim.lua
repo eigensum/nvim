@@ -13,7 +13,7 @@ local function setup_nvim_lspconfig()
 	end
 
 	-- Configure LSPs
-	local servers = require("lua.configs.lsps")
+	local servers = require("configs.lsps")
 
 	for server, opts in pairs(servers) do
 		vim.lsp.config(server, {
