@@ -43,6 +43,34 @@
         plenary-nvim
         nvim-navic
         nui-nvim
+        # Parsers
+        nvim-treesitter-parsers.lua
+        nvim-treesitter-parsers.zig
+        nvim-treesitter-parsers.yaml
+        nvim-treesitter-parsers.vim
+        nvim-treesitter-parsers.vimdoc
+        nvim-treesitter-parsers.toml
+        nvim-treesitter-parsers.rust
+        nvim-treesitter-parsers.python
+        nvim-treesitter-parsers.ocaml
+        nvim-treesitter-parsers.nix
+        nvim-treesitter-parsers.matlab
+        nvim-treesitter-parsers.markdown
+        nvim-treesitter-parsers.make
+        nvim-treesitter-parsers.latex
+        nvim-treesitter-parsers.json
+        nvim-treesitter-parsers.java
+        nvim-treesitter-parsers.hyprlang
+        nvim-treesitter-parsers.haskell
+        nvim-treesitter-parsers.gitignore
+        nvim-treesitter-parsers.gitcommit
+        nvim-treesitter-parsers.gitattributes
+        nvim-treesitter-parsers.cpp
+        nvim-treesitter-parsers.cmake
+        nvim-treesitter-parsers.c
+        nvim-treesitter-parsers.bibtex
+        nvim-treesitter-parsers.bash
+        nvim-treesitter-parsers.asm
       ];
 
       extraPackages = with pkgs;
