@@ -31,6 +31,7 @@
         url-open
         barbar-nvim
         render-markdown-nvim
+        nvim-web-devicons
       ];
 
       extraPackages = with pkgs;
