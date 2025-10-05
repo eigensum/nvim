@@ -12,11 +12,10 @@ local function setup_nvim_lspconfig()
 		end
 	end
 
-	print("LSP setup running")
 	-- Configure LSPs
 	local servers = require("configs.lsps")
 
-	print(servers)
+	vim.print(servers)
 
 	for server, opts in pairs(servers) do
 		vim.lsp.config(server, {
