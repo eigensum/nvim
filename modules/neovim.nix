@@ -55,6 +55,7 @@
           python313
           ocaml
           opam
+          tree-sitter
 
           # LSPs
           rustup
