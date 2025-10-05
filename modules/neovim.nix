@@ -28,7 +28,7 @@
         gen-nvim
         trouble-nvim
         todo-comments-nvim
-        urlopen-nvim
+        url-open
         barbar-nvim
         render-markdown-nvim
       ];
