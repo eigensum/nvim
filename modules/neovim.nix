@@ -56,6 +56,7 @@
           ocaml
           opam
           tree-sitter
+          node
 
           # LSPs
           rustup
