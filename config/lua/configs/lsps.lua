@@ -64,7 +64,7 @@ return {
 	},
 
 	-- Lua
-	sumneko_lua = {
+	lua_ls = {
 		Lua = {
 			runtime = { version = "LuaJIT" },
 			diagnostics = { globals = { "vim" } },
