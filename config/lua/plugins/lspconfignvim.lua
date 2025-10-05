@@ -16,7 +16,7 @@ local function setup_nvim_lspconfig()
 	local servers = require("configs.lsps")
 
 	for server, opts in pairs(servers) do
-		vim.lsp.config(server, {
+		vim.lsp.config.setup(server, {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			settings = opts,
