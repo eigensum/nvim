@@ -27,7 +27,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("q", "󱊷 Quit", ":qa<CR>"),
 }
 
-local index = math.randomseed(os.time())
+math.randomseed(os.time())
 
 local qoutes = {
 	"𝔸𝕝𝕝 𝕞𝕖𝕟 𝕕𝕣𝕖𝕒𝕞: 𝕓𝕦𝕥 𝕟𝕠𝕥 𝕖𝕢𝕦𝕒𝕝𝕝𝕪.",
@@ -40,7 +40,10 @@ local qoutes = {
 	"𝕎𝕖𝕣𝕕𝕖 𝕦𝕞 𝕫𝕦 𝕤𝕖𝕚𝕟, 𝕤𝕖𝕚𝕟 𝕦𝕞 𝕫𝕦 𝕨𝕖𝕣𝕕𝕖𝕟,\n 𝕟𝕦𝕣 𝕕𝕚𝕖 𝕎𝕖𝕣𝕕𝕖𝕟𝕕𝕖𝕟 𝕤𝕚𝕟𝕕.",
 }
 
+local length = #qoutes
+
+local index = math.random(length)
+
 dashboard.section.footer.val = qoutes[index]
 
 alpha.setup(dashboard.opts)
-
