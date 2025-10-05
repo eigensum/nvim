@@ -23,14 +23,14 @@
         lazygit-nvim
         nvim-lspconfig
         nvim-cmp
-        navbuddy-nvim
+        nvim-navbuddy
         which-key-nvim
         gen-nvim
         trouble-nvim
         todo-comments-nvim
         urlopen-nvim
         barbar-nvim
-        markdown-nvim
+        render-markdown-nvim
       ];
 
       extraPackages = with pkgs;
