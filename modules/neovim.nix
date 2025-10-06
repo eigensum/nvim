@@ -77,7 +77,6 @@
         [
           ripgrep
           lazygit
-          ollama
           lua
           zig
           python313
@@ -110,6 +109,10 @@
           zathura
           rocmPackages.clang
         ];
+
+      home.packages = with pkgs; [
+        ollama
+      ];
 
       extraConfig = ''
         set spell
