@@ -121,18 +121,5 @@
     home.file = {
       ".config/nvim".source = eigen-neovim + "/config";
     };
-    home.activation.ollamaModel = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      MODEL_NAME="eigenagent:8b"
-      MODEL_DIR="$HOME/.config/nvim/lua/models/$MODEL_NAME"
-      MODEFILE="$MODEL_DIR/Modelfile"
-
-        # Serve the ollama server
-      ${pkgs.ollama}/bin/ollama serve > /dev/null 2>&1 &
-
-      # Create the model if not present
-      if ! ${pkgs.ollama}/bin/ollama ls | grep -q "$MODEL_NAME"; then
-        ${pkgs.ollama}/bin/ollama create "$MODEL_NAME" -f "$MODEFILE"
-      fi
-    '';
   };
 }
