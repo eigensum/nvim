@@ -127,7 +127,7 @@
       MODEFILE="$MODEL_DIR/Modelfile"
 
       # Create the model if not present
-      if ! ${pkgs.ollama}/bin/ollama models | grep -q "$MODEL_NAME"; then
+      if ! ${pkgs.ollama}/bin/ollama ls | grep -q "$MODEL_NAME"; then
         ${pkgs.ollama}/bin/ollama create "$MODEL_NAME" -f "$MODEFILE"
       fi
     '';
