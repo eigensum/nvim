@@ -110,10 +110,6 @@
           rocmPackages.clang
         ];
 
-      home.packages = with pkgs; [
-        ollama
-      ];
-
       extraConfig = ''
         set spell
         set spelllang=de,en
