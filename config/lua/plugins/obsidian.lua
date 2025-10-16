@@ -1,1 +1,3 @@
-require("obsidian").setup({})
+require("obsidian").setup({
+	legacy_commands = false,
+})
