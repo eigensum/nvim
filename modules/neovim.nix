@@ -22,6 +22,7 @@
         conform-nvim
         lazygit-nvim
         nvim-lspconfig
+        obsidian-nvim
         nvim-cmp
         nvim-navbuddy
         which-key-nvim
@@ -98,7 +99,6 @@
 
           # Formatters
           google-java-format
-          mdformat
           black
           alejandra
           ocamlformat_0_26_2
