@@ -8,6 +8,7 @@ vim.opt.termguicolors = true
 vim.opt.wrap = false
 
 vim.g.mapleader = " "
+vim.opt.mouse = ""
 
 require("plugins.treesitter")
 require("plugins.telescope")
