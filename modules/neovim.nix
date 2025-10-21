@@ -72,43 +72,42 @@
         nvim-treesitter-parsers.bibtex
         nvim-treesitter-parsers.bash
         nvim-treesitter-parsers.asm
+        nvim-treesitter-parsers.matlab
       ];
 
-      extraPackages = with pkgs;
-        [
-          ripgrep
-          lazygit
-          lua
-          zig
-          python313
-          ocaml
-          opam
-          tree-sitter
-          nodejs_24
+      extraPackages = with pkgs; [
+        ripgrep
+        lazygit
+        lua
+        zig
+        python313
+        ocaml
+        opam
+        tree-sitter
+        nodejs_24
+        jdk22
+        zathura
+        rocmPackages.clang
 
-          # LSPs
-          rustup
-          java-language-server
-          marksman
-          python313Packages.python-lsp-server
-          nil
-          ocamlPackages.ocaml-lsp
-          zls
-          texlab
-          lua-language-server
+        # LSPs
+        rustup
+        java-language-server
+        marksman
+        python313Packages.python-lsp-server
+        nil
+        ocamlPackages.ocaml-lsp
+        zls
+        texlab
+        lua-language-server
 
-          # Formatters
-          google-java-format
-          black
-          alejandra
-          ocamlformat_0_26_2
-          tex-fmt
-          stylua
-        ]
-        ++ lib.optionals pkgs.stdenv.isLinux [
-          zathura
-          rocmPackages.clang
-        ];
+        # Formatters
+        jdt-language-server
+        black
+        alejandra
+        ocamlformat_0_26_2
+        tex-fmt
+        stylua
+      ];
 
       extraConfig = ''
         set spell

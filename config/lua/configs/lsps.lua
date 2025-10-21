@@ -1,3 +1,6 @@
+local java_path = vim.fn.exepath("java")
+local java_home = java_path:match("(.+)/bin/java$")
+
 return {
 	-- Rust (rust-analyzer)
 	rust_analyzer = {
@@ -9,7 +12,19 @@ return {
 
 	-- Java
 	jdtls = {
-		-- jdtls is usually configured via launchers, leaving settings empty
+		settings = {
+			java = {
+				configuration = {
+					runtimes = {
+						{
+							name = "Java 22",
+							path = java_home,
+							default = true,
+						},
+					},
+				},
+			},
+		},
 	},
 
 	-- C/C++ (clangd)
