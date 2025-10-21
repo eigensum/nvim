@@ -85,7 +85,7 @@
         opam
         tree-sitter
         nodejs_24
-        jdk24
+        jdk25
         zathura
         rocmPackages.clang
 

@@ -17,7 +17,7 @@ return {
 				configuration = {
 					runtimes = {
 						{
-							name = "Java 24",
+							name = "Java 25",
 							path = java_home,
 							default = true,
 						},
