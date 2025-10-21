@@ -91,7 +91,6 @@
 
         # LSPs
         rustup
-        java-language-server
         marksman
         python313Packages.python-lsp-server
         nil
@@ -99,9 +98,10 @@
         zls
         texlab
         lua-language-server
+        jdt-language-server
 
         # Formatters
-        jdt-language-server
+        google-java-format
         black
         alejandra
         ocamlformat_0_26_2
