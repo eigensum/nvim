@@ -87,7 +87,7 @@
         nodejs_24
         jdk25
         zathura
-        rocmPackages.clang
+        llvmPackages_20.clang-tools
 
         # LSPs
         rustup
