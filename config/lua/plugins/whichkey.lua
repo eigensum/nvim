@@ -34,17 +34,40 @@ local function cycle_markdown_render()
 	end
 end
 
-local function select_languages(language)
-	vim.opt.spell = true
-	if language == "en" then
-		vim.opt.spelllang = "en"
+local function contains(list, value)
+	for _, v in ipairs(list) do
+		if v == value then
+			return true
+		end
+	end
+	return false
+end
+
+local function remove_spelllang(lang)
+	local current = vim.opt.spelllang:get()
+	local new = {}
+
+	for _, v in ipairs(current) do
+		if v ~= lang then
+			table.insert(new, v)
+		end
+	end
+
+	vim.opt.spelllang = new
+end
+
+local function toggle_spellcheck()
+	vim.cmd("set spell!")
+end
+
+local function toggle_languages(language)
+	local languages = vim.opt.spelllang:get()
+	if contains(languages, language) then
+		remove_spelllang(language)
 		return
 	end
-	if language == "de" then
-		vim.opt.spelllang = "de"
-		return
-	end
-	vim.opt.spell = false
+	table.insert(languages, language)
+	vim.opt.spelllang = languages
 end
 
 local function jump_to_buffer()
@@ -130,9 +153,9 @@ wk.add({
 })
 wk.add({
 	{ "<leader>m", group = "Languages", icon = { icon = "", color = "orange" } },
-	{ "<leader>mm", select_languages(""), desc = "Turn of Spelling", icon = { icon = "", color = "orange" } },
-	{ "<leader>md", select_languages("de"), desc = "Deutsch", icon = { icon = "🇩🇪" } },
-	{ "<leader>me", select_languages("en"), desc = "English", icon = { icon = "🇬🇧" } },
+	{ "<leader>mm", toggle_spellcheck(), desc = "Toggle Spelling", icon = { icon = "", color = "orange" } },
+	{ "<leader>md", toggle_languages("de_DE"), desc = "Toggle Deutsch", icon = { icon = "🇩🇪" } },
+	{ "<leader>me", toggle_languages("en_US"), desc = "Toggle English", icon = { icon = "🇬🇧" } },
 })
 wk.add({
 	{ "<leader>o", group = "Obsidian", icon = { icon = "", color = "purple" } },
