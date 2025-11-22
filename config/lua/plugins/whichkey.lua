@@ -35,13 +35,12 @@ local function cycle_markdown_render()
 end
 
 local function select_languages(language)
+	vim.opt.spell = true
 	if language == "en" then
-		vim.opt.spell = true
 		vim.opt.spelllang = "en"
 		return
 	end
 	if language == "de" then
-		vim.opt.spell = true
 		vim.opt.spelllang = "de"
 		return
 	end
