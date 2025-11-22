@@ -131,12 +131,12 @@ wk.add({
 })
 wk.add({
 	{ "<leader>m", group = "Languages", icon = { icon = "", color = "orange" } },
-	{ "<leader>mm", select_languages("off"), desc = "Turn of Spelling", icon = { icon = "", color = "orange" } },
+	{ "<leader>mm", select_languages(""), desc = "Turn of Spelling", icon = { icon = "", color = "orange" } },
 	{ "<leader>md", select_languages("de"), desc = "Deutsch", icon = { icon = "🇩🇪" } },
 	{ "<leader>me", select_languages("en"), desc = "English", icon = { icon = "🇬🇧" } },
 })
 wk.add({
-	{ "<leader>g", group = "Obsidian", icon = { icon = "", color = "purple" } },
+	{ "<leader>o", group = "Obsidian", icon = { icon = "", color = "purple" } },
 	{ "<leader>on", obsidian_new_note, desc = "New Note", icon = { icon = "", color = "purple" } },
 	{ "<leader>or", obsidian_rename_note, desc = "Rename Note", icon = { icon = "󰑕", color = "purple" } },
 	{
