@@ -3,6 +3,28 @@
 -- Github: https://github.com/folke/which-key.nvim
 -- Icons Cheat Sheet: https://www.nerdfonts.com/cheat-sheet
 
+local function obsidian_new_note()
+	vim.ui.input({ prompt = "Enter the name of the new note: " }, function(input)
+		if not input or input == "" then
+			print("Cancelled")
+			return
+		end
+		local cmd = "Obsidian new " .. input
+		vim.cmd(cmd)
+	end)
+end
+
+local function obsidian_rename_note()
+	vim.ui.input({ prompt = "Enter the new name of the note: " }, function(input)
+		if not input or input == "" then
+			print("Cancelled")
+			return
+		end
+		local cmd = "Obsidian rename " .. input
+		vim.cmd(cmd)
+	end)
+end
+
 local function cycle_markdown_render()
 	local status = require("render-markdown").get()
 	if status == true then
@@ -12,22 +34,18 @@ local function cycle_markdown_render()
 	end
 end
 
-local function cycle_languages()
-	local active = vim.opt.spell:get()
-	local current = vim.opt.spelllang:get()[1]
-	if not active then
+local function select_languages(language)
+	if language == "en" then
 		vim.opt.spell = true
 		vim.opt.spelllang = "en"
 		return
 	end
-	if current == "en" then
+	if language == "de" then
+		vim.opt.spell = true
 		vim.opt.spelllang = "de"
 		return
 	end
-	if current == "de" then
-		vim.opt.spell = false
-		return
-	end
+	vim.opt.spell = false
 end
 
 local function jump_to_buffer()
@@ -68,15 +86,6 @@ wk.add({
 	{ "<leader>j", "<C-w>j", desc = "Bottom Split", icon = { icon = "", color = "yellow" } },
 	{ "<leader>k", "<C-w>k", desc = "Top Split", icon = { icon = "", color = "yellow" } },
 	{ "<leader>r", vim.lsp.buf.rename, desc = "Rename symbol", icon = { icon = "󰑕", color = "azure" } },
-})
-wk.add({
-	{ "<leader>c", group = "CoPilot", icon = { icon = "", color = "purple" } },
-	{ "<leader>ca", "<cmd>Gen Ask<cr>", desc = "Ask LLM", icon = { icon = "", color = "purple" } },
-	{ "<leader>cc", "<cmd>Gen Change_Code<cr>", desc = "Change Code", icon = { icon = "", color = "purple" } },
-	{ "<leader>ce", "<cmd>Gen Enhance_Code<cr>", desc = "Enhance Code", icon = { icon = "", color = "purple" } },
-	{ "<leader>cr", "<cmd>Gen Review_Code<cr>", desc = "Review Code", icon = { icon = "", color = "purple" } },
-	{ "<leader>cw", "<cmd>Gen Generate<cr>", desc = "Write Code", icon = { icon = "󰵮", color = "purple" } },
-	{ "<leader>cf", "<cmd>Gen Chat<cr>", desc = "Chat with LLM", icon = { icon = "󰭻", color = "purple" } },
 })
 wk.add({
 	{ "<leader>f", group = "Find", icon = { icon = "", color = "green" } },
@@ -121,8 +130,27 @@ wk.add({
 	{ "<leader>xm", cycle_markdown_render, desc = "Render Markdown", icon = { icon = "", color = "azure" } },
 })
 wk.add({
-	{ "<leader>m", group = "Managers", icon = { icon = "", color = "orange" } },
-	{ "<leader>ms", cycle_languages, desc = "Cycle Spellcheckers", icon = { icon = "", color = "red" } },
+	{ "<leader>m", group = "Languages", icon = { icon = "", color = "orange" } },
+	{ "<leader>mm", select_languages("off"), desc = "Turn of Spelling", icon = { icon = "", color = "orange" } },
+	{ "<leader>md", select_languages("de"), desc = "Deutsch", icon = { icon = "🇩🇪" } },
+	{ "<leader>me", select_languages("en"), desc = "English", icon = { icon = "🇬🇧" } },
+})
+wk.add({
+	{ "<leader>g", group = "Obsidian", icon = { icon = "", color = "purple" } },
+	{ "<leader>on", obsidian_new_note, desc = "New Note", icon = { icon = "", color = "purple" } },
+	{ "<leader>or", obsidian_rename_note, desc = "Rename Note", icon = { icon = "󰑕", color = "purple" } },
+	{
+		"<leader>of",
+		"<cmd>Obsidian follow_link vsplit<cr>",
+		desc = "Follow Link",
+		icon = { icon = "", color = "purple" },
+	},
+	{
+		"<leader>os",
+		"<cmd>Obsidian quick_switch<cr>",
+		desc = "Search Note",
+		icon = { icon = "󱘞", color = "purple" },
+	},
 })
 wk.add({
 	{ "<leader>b", group = "Tabs", icon = { icon = "󰓩", color = "yellow" } },

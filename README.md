@@ -32,7 +32,6 @@ LSPs and formatters should be set in the respective files under `configs`. The k
 | **cmp** | Completion engine for LSP and other sources | |
 | **navbuddy** | Navigation plugin for buffers | |
 | **whichkey** | Show key mappings | all shortcuts should be set in `whichkey.nvim`|
-| **gen** | Generate code snippets | uses ollama, the Modelfiles can be found under models|
 | **trouble** | LSP diagnostics and messages | |
 | **todo** | Todo highlighting plugin | |
 | **urlopen** | Open URLs in the default browser | |

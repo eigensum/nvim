@@ -26,7 +26,6 @@
         nvim-cmp
         nvim-navbuddy
         which-key-nvim
-        gen-nvim
         trouble-nvim
         todo-comments-nvim
         url-open
@@ -91,7 +90,6 @@
 
         # LSPs
         rustup
-        marksman
         python313Packages.python-lsp-server
         nil
         ocamlPackages.ocaml-lsp
