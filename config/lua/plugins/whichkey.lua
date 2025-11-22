@@ -152,9 +152,30 @@ wk.add({
 })
 wk.add({
 	{ "<leader>m", group = "Languages", icon = { icon = "", color = "orange" } },
-	{ "<leader>mm", toggle_spellcheck(), desc = "Toggle Spelling", icon = { icon = "", color = "orange" } },
-	{ "<leader>md", toggle_languages("de"), desc = "Toggle Deutsch", icon = { icon = "🇩🇪" } },
-	{ "<leader>me", toggle_languages("en"), desc = "Toggle English", icon = { icon = "🇬🇧" } },
+	{
+		"<leader>mm",
+		function()
+			toggle_spellcheck()
+		end,
+		desc = "Toggle Spelling",
+		icon = { icon = "", color = "orange" },
+	},
+	{
+		"<leader>md",
+		function()
+			toggle_languages("de")
+		end,
+		desc = "Toggle Deutsch",
+		icon = { icon = "🇩🇪" },
+	},
+	{
+		"<leader>me",
+		function()
+			toggle_languages("en")
+		end,
+		desc = "Toggle English",
+		icon = { icon = "🇬🇧" },
+	},
 })
 wk.add({
 	{ "<leader>o", group = "Obsidian", icon = { icon = "", color = "purple" } },
