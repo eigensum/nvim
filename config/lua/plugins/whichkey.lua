@@ -153,8 +153,8 @@ wk.add({
 wk.add({
 	{ "<leader>m", group = "Languages", icon = { icon = "", color = "orange" } },
 	{ "<leader>mm", toggle_spellcheck(), desc = "Toggle Spelling", icon = { icon = "", color = "orange" } },
-	{ "<leader>md", toggle_languages("de_DE"), desc = "Toggle Deutsch", icon = { icon = "🇩🇪" } },
-	{ "<leader>me", toggle_languages("en_US"), desc = "Toggle English", icon = { icon = "🇬🇧" } },
+	{ "<leader>md", toggle_languages("de"), desc = "Toggle Deutsch", icon = { icon = "🇩🇪" } },
+	{ "<leader>me", toggle_languages("en"), desc = "Toggle English", icon = { icon = "🇬🇧" } },
 })
 wk.add({
 	{ "<leader>o", group = "Obsidian", icon = { icon = "", color = "purple" } },
