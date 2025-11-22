@@ -43,10 +43,6 @@ local function contains(list, value)
 	return false
 end
 
-local function toggle_spellcheck()
-	vim.cmd("set spell!")
-end
-
 local function toggle_languages(language)
 	local langs = vim.opt.spelllang:get()
 
@@ -152,14 +148,6 @@ wk.add({
 })
 wk.add({
 	{ "<leader>m", group = "Languages", icon = { icon = "", color = "orange" } },
-	{
-		"<leader>mm",
-		function()
-			toggle_spellcheck()
-		end,
-		desc = "Toggle Spelling",
-		icon = { icon = "", color = "orange" },
-	},
 	{
 		"<leader>md",
 		function()
