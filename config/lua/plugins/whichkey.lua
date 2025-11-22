@@ -43,31 +43,30 @@ local function contains(list, value)
 	return false
 end
 
-local function remove_spelllang(lang)
-	local current = vim.opt.spelllang:get()
-	local new = {}
-
-	for _, v in ipairs(current) do
-		if v ~= lang then
-			table.insert(new, v)
-		end
-	end
-
-	vim.opt.spelllang = new
-end
-
 local function toggle_spellcheck()
 	vim.cmd("set spell!")
 end
 
 local function toggle_languages(language)
-	local languages = vim.opt.spelllang:get()
-	if contains(languages, language) then
-		remove_spelllang(language)
+	local langs = vim.opt.spelllang:get()
+
+	if contains(langs, language) then
+		local new = {}
+		for _, v in ipairs(langs) do
+			if v ~= language then
+				table.insert(new, v)
+			end
+		end
+		vim.opt.spelllang = new
+		if #new == 0 then
+			vim.opt.spell = false
+		end
 		return
 	end
-	table.insert(languages, language)
-	vim.opt.spelllang = languages
+
+	table.insert(langs, language)
+	vim.opt.spelllang = langs
+	vim.opt.spell = true
 end
 
 local function jump_to_buffer()
